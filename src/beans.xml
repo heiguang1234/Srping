@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="com.hspedu.spring.bean.Monster" id="monster01">
+        <!-- 以下使用set方法进行属性注入 -->
+        <property name="monsterID" value="100"></property>
+        <property name="name" value="牛魔王"></property>
+        <property name="skill" value="芭蕉扇"></property>
+    </bean>
+    <bean class="com.hspedu.spring.factory.MyStaticFactory" id="my_monster" factory-method="getBean">
+        <constructor-arg value="my_monster02"></constructor-arg>
+    </bean>
+</beans>
